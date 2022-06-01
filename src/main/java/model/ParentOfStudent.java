@@ -2,11 +2,11 @@ package model;
 
 
 public class ParentOfStudent {
-    private int studentId;
-    private int parentId;
+    private long studentId;
+    private long parentId;
 
 
-    public ParentOfStudent(int studentId, int parentId) {
+    public ParentOfStudent(long studentId, long parentId) {
         this.studentId = studentId;
         this.parentId = parentId;
     }

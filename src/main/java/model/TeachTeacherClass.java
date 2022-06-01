@@ -3,15 +3,15 @@ package model;
 import java.util.Date;
 
 public class TeachTeacherClass {
-        private int teacherId;
-        private int classId;
+        private long teacherId;
+        private long classId;
         private int numberOfTeachingHours;
 
-    public int getTeacherId() {
+    public long getTeacherId() {
         return teacherId;
     }
 
-    public int getClassId() {
+    public long getClassId() {
         return classId;
     }
 

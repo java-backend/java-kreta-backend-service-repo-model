@@ -7,6 +7,8 @@ import repo.LearnClassSubjectRepo;
 import repo.SchoolClassesRepo;
 import repo.SubjectRepo;
 
+import java.util.List;
+
 public class LearnClassSubjectService {
 
     private SubjectRepo subjectRepo;
@@ -19,19 +21,16 @@ public class LearnClassSubjectService {
         learnClassSubjectRepo=new LearnClassSubjectRepo();
     }
 
-    public Subject getSubjectByClass(int schoolClass, char schoolType) {
+    public List<Subject> getSubjectsByClass(int schoolClass, char schoolType) {
         //1. Osztály id az évfolyam és osztálytípus alapján
         long schoolClassId=schoolClassesRepo.getId(schoolClass,schoolType);
 
-        //2. A LearClassSubject repoból azon tantáryg azonosítók listája
+        //2. A LearClassSubject repoból azon tantárgy azonosítók listája
         //   amelyek az osztály id-hez tartoznak
-
+        List<Long> subjectIds=learnClassSubjectRepo.getSubjectIdsLearnBySchoolClass(schoolClassId);
 
 
         //3. Tantárgyak listája a megkapott tantárgy azonosítók alapján
-
-
-        return null;
+        return subjectRepo.getSubjectByIds(subjectIds);
     }
-
 }

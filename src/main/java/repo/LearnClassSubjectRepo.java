@@ -5,6 +5,8 @@ import model.LearnClassSubject;
 import java.util.ArrayList;
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 public class LearnClassSubjectRepo {
     private List<LearnClassSubject> learnClassSubject;
 
@@ -19,6 +21,14 @@ public class LearnClassSubjectRepo {
         learnClassSubject.add(new LearnClassSubject(3, 1));
         learnClassSubject.add(new LearnClassSubject(4, 2));
         learnClassSubject.add(new LearnClassSubject(4, 3));
+    }
+
+    public  List<Long> getSubjectIdsLearnBySchoolClass(long schoolClassId) {
+        return learnClassSubject
+                .stream()
+                .filter(lcs -> lcs.getClassId() == schoolClassId)
+                .map(LearnClassSubject::getSubjectId)
+                .collect(toList());
     }
 }
 

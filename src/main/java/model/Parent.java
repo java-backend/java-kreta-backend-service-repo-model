@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 
 public class Parent {
-    public int id;
+    public long id;
     public String firstName;
     public String lastName;
     public boolean wooman;
@@ -14,7 +14,7 @@ public class Parent {
     public String loginName;
     public String password;
 
-    public Parent(int id, String firstName, String lastName, boolean wooman, Date dataOfBirth) {
+    public Parent(long id, String firstName, String lastName, boolean wooman, Date dataOfBirth) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -22,7 +22,7 @@ public class Parent {
         this.dataOfBirth = dataOfBirth;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

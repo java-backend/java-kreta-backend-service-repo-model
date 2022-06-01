@@ -2,27 +2,27 @@ package model;
 
 
 public class LearnClassSubject {
-    private int classId;
-    private int SubjectId;
+    private long classId;
+    private long SubjectId;
 
-    public LearnClassSubject(int classId, int subjectId) {
+    public LearnClassSubject(long classId, long subjectId) {
         this.classId = classId;
         SubjectId = subjectId;
     }
 
-    public void setClassId(int classId) {
+    public void setClassId(long classId) {
         this.classId = classId;
     }
 
-    public void setSubjectId(int subjectId) {
+    public void setSubjectId(long subjectId) {
         SubjectId = subjectId;
     }
 
-    public int getClassId() {
+    public long getClassId() {
         return classId;
     }
 
-    public int getSubjectId() {
+    public long getSubjectId() {
         return SubjectId;
     }
 }

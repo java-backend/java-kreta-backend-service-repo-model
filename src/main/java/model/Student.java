@@ -3,7 +3,7 @@ package model;
 import java.util.Date;
 
 public class Student {
-    private int id;
+    private long id;
     private String fullName;
     private Date birthday;
     private boolean isWoman;
@@ -15,18 +15,18 @@ public class Student {
         this.isWoman = true;
     }
 
-    public Student(int iD, String fullName, Date birthday, boolean isWoman) {
+    public Student(long iD, String fullName, Date birthday, boolean isWoman) {
         this.id = iD;
         this.fullName = fullName;
         this.birthday = birthday;
         this.isWoman = isWoman;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 

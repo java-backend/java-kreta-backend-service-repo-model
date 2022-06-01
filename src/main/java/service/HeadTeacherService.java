@@ -4,11 +4,11 @@ import model.Teacher;
 import repo.SchoolClassesRepo;
 import repo.TeachersRepo;
 
-public class HeadTeacher {
+public class HeadTeacherService {
     private SchoolClassesRepo schoolClassesRepo;
     private TeachersRepo teachersRepo;
 
-    public HeadTeacher() {
+    public HeadTeacherService() {
         schoolClassesRepo=new SchoolClassesRepo();
         teachersRepo=new TeachersRepo();
     }

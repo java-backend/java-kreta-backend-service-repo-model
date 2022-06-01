@@ -4,15 +4,15 @@ import java.util.Date;
 
 public class Subject {
 
-    private int id;
+    private long id;
     private String subjectName;
 
-    public Subject(int id, String subjectName) {
+    public Subject(long id, String subjectName) {
         this.id = id;
         this.subjectName = subjectName;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 
@@ -20,11 +20,19 @@ public class Subject {
         return subjectName;
     }
 
-    public void setId(int id) {
+    public void setId(long id) {
         this.id = id;
     }
 
     public void setSubjectName(String subjectName) {
         this.subjectName = subjectName;
+    }
+
+    @Override
+    public String toString() {
+        return "Subject{" +
+                "id=" + id +
+                ", subjectName='" + subjectName + '\'' +
+                '}';
     }
 }

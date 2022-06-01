@@ -119,4 +119,14 @@ public class Teacher {
         this.numberOfChildren = numberOfChildren;
     }
 
+    @Override
+    public String toString() {
+        return "Teacher{" +
+                "id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", wooman=" + wooman +
+                ", dataOfBirth=" + dataOfBirth +
+                '}';
+    }
 }

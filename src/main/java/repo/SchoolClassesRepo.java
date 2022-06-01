@@ -23,14 +23,14 @@ public class SchoolClassesRepo {
         schoolClasses.add(new SchoolClass(6, 11, 'a', 0));
     }
 
-    public long getNumberOfGradeType(long schoolClass) {
+    public long getNumberOfSchoolClass(long schoolClass) {
         return this.schoolClasses
                 .stream()
                 .filter(sc -> sc.getSchoolClass() == schoolClass)
                 .count();
     }
 
-    public long getNumberOfSchoolClass(long classType) {
+    public long getNumberOfSchoolType(long classType) {
         long num = schoolClasses.stream()
                 .filter(s -> s.getClassType() == classType)
                 .count();
@@ -51,7 +51,7 @@ public class SchoolClassesRepo {
         return schoolClasses
                 .stream()
                 .filter(sc -> sc.getSchoolClass()==schoolClass &&
-                              sc.getSchoolClass()==classType )
+                              sc.getClassType()==classType )
                 .findFirst()
                 .get()
                 .getId();

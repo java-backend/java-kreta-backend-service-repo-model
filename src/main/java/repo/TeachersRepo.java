@@ -1,6 +1,7 @@
 package repo;
 
 import model.Teacher;
+import model.TeacherInfo;
 
 import java.util.ArrayList;
 import java.util.Date;
@@ -26,6 +27,14 @@ public  class TeachersRepo {
         teachers.add(new Teacher(4, "Arany", "András", false, new Date(1974, 10, 24)));
         teachers.add(new Teacher(5, "Sportoló", "Jenő", false, new Date(1974, 10, 24)));
         teachers.add(new Teacher(6, "Visszanéző", "Viola", true, new Date(1974, 10, 24)));
+    }
+
+    public List<TeacherInfo> getTeacherInfo(boolean isWoman) {
+        return this.teachers
+                .stream()
+                .filter(t -> t.isWooman() == isWoman)
+                .map(t -> new TeacherInfo(t.getId(),t.getFirstName(),t.getLastName()))
+                .collect(toList());
     }
 
     public Teacher getTeacherById(long id) {

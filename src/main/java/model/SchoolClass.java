@@ -2,19 +2,19 @@ package model;
 
 
 public class SchoolClass {
-    private int id;
+    private long id;
     private int schoolClass;
     private char classType;
     private int teacherId;
 
-    public SchoolClass(int id, int schoolClass, char classType, int teacherId) {
+    public SchoolClass(long id, int schoolClass, char classType, int teacherId) {
         this.id = id;
         this.schoolClass = schoolClass;
         this.classType = classType;
         this.teacherId = teacherId;
     }
 
-    public int getId() {
+    public long getId() {
         return id;
     }
 

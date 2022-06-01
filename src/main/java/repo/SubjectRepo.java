@@ -2,15 +2,19 @@ package repo;
 
 import model.Subject;
 
+import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 public class SubjectRepo {
     private List<Subject> subjects;
 
-
+    public SubjectRepo() {
+        subjects=new ArrayList<>();
+        MakeTestData();
+    }
 
     public void MakeTestData() {
-
         subjects.add(new Subject(1, "Informatika"));
         subjects.add(new Subject(2, "Angol"));
         subjects.add(new Subject(3, "Matematika"));
@@ -21,5 +25,10 @@ public class SubjectRepo {
     }
 
 
+    public List<Subject> getSubjectByIds(List<Long> subjectIds) {
+        return subjects.stream()
+                .filter(s -> subjectIds.contains(s.getId()))
+                .collect(Collectors.toList());
+    }
 }
 

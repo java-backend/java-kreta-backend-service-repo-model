@@ -1,11 +1,11 @@
 package model;
 
-public class TecherInfo {
+public class TeacherInfo {
     private long id;
     private String firstName;
     private String lastName;
 
-    public TecherInfo(long id, String firstName, String lastName) {
+    public TeacherInfo(long id, String firstName, String lastName) {
         this.id = id;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -37,6 +37,6 @@ public class TecherInfo {
 
     @Override
     public String toString() {
-        return "(" + id +")'" + firstName + " " + lastName ;
+        return "(" + id +") " + firstName + " " + lastName ;
     }
 }

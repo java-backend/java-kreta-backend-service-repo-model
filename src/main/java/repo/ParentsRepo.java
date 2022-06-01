@@ -6,6 +6,8 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import static java.util.stream.Collectors.toList;
+
 public class ParentsRepo {
     private List<Parent> parents;
 
@@ -29,15 +31,18 @@ public class ParentsRepo {
         parents.add(new Parent(12, "Kertész", "László", false, new Date(1974, 3, 12)));
     }
 
-    public List<Parent> getParents(boolean wooman) {
+    public List<Parent> getParents(boolean isWoman) {
         return parents
                 .stream()
-                .filter(x -> x.isWooman() == wooman)
+                .filter(x -> x.isWooman() == isWoman)
                 .collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
     }
 
-    public List<String> getParentsLastAndFirstName(boolean wooman) {
-        return null;
+    public List<String> getNameOfParents(boolean isWoman)	{
+        return parents
+                .stream()
+                .filter(Parent::isWooman)
+                .map(x -> x.getFirstName() + " " + x.getLastName())
+                .collect(toList());
     }
-
 }
